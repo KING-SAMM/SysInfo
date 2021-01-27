@@ -9,21 +9,31 @@
 </head>
 <body>
     <div class="container">
-        <h1>System Info</h1>
+        <h1>SysInfo</h1>
+        <h4>Get detailed system information of your computer resources including: </h4>
+        <ul>
+            <li><a href="#app-verion">app version data</a></li>
+            <li><a href="#sys-specs">system specs</a></li>
+            <li><a href="#sys-mem">system memory</a></li>
+            <li><a href="#comp-info">computer info</a></li>
+        </ul>
         <div id="output"></div>
+        <footer>
+            <p>Copyright &copy; 2020 by studioeternal</p>
+        </footer>
     </div>
 </body>
 <script>
     console.log(process);
     let output = `
-        <h2 class="page-header">App Version Data</h2>
+        <h2 class="page-header" id="app-verion">App Version Data</h2>
         <ul class="list-group">
             <li class="list-group-item">Node: ${process.versions.node}</li>
             <li class="list-group-item">Chrome: ${process.versions.chrome}</li>
             <li class="list-group-item">Electron: ${process.versions.electron}</li>
         </ul>
 
-        <h2 class="page-header">System Specs</h2>
+        <h2 class="page-header" id="sys-specs">System Specs</h2>
         <ul class="list-group">
             <li class="list-group-item">System Architecture: ${process.arch}</li>
             <li class="list-group-item">Processor Architecture: ${process.env.PROCESSOR_ARCHITECTURE}</li>
@@ -34,7 +44,7 @@
             <li class="list-group-item">System Version: ${process.getSystemVersion()}</li>
         </ul>
 
-        <h2 class="page-header">System Memory</h2>
+        <h2 class="page-header" id="sys-mem">System Memory</h2>
         <ul class="list-group">
             <li class="list-group-item">Total: ${process.getSystemMemoryInfo().total}</li>
             <li class="list-group-item">Free: ${process.getSystemMemoryInfo().free}</li>
@@ -54,7 +64,7 @@
             </li>
         </ul>
 
-        <h2 class="page-header">Computer Info</h2>
+        <h2 class="page-header" id="comp-info">Computer Info</h2>
         <ul class="list-group">
             <li class="list-group-item">Computer Name: ${process.env.USERDOMAIN}</li>
             <li class="list-group-item">Username: ${process.env.USERNAME}</li>
